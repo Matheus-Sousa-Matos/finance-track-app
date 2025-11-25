@@ -1,0 +1,576 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		FB8F57C92ED621E400027A3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB8F57A62ED621E100027A3E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB8F57AD2ED621E100027A3E;
+			remoteInfo = "finance-track-app";
+		};
+		FB8F57D32ED621E400027A3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB8F57A62ED621E100027A3E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB8F57AD2ED621E100027A3E;
+			remoteInfo = "finance-track-app";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FB8F57AE2ED621E200027A3E /* finance-track-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "finance-track-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB8F57C82ED621E400027A3E /* finance-track-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "finance-track-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB8F57D22ED621E400027A3E /* finance-track-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "finance-track-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		FB8F57DA2ED621E400027A3E /* Exceptions for "finance-track-app" folder in "finance-track-app" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = FB8F57AD2ED621E100027A3E /* finance-track-app */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		FB8F57B02ED621E200027A3E /* finance-track-app */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				FB8F57DA2ED621E400027A3E /* Exceptions for "finance-track-app" folder in "finance-track-app" target */,
+			);
+			path = "finance-track-app";
+			sourceTree = "<group>";
+		};
+		FB8F57CB2ED621E400027A3E /* finance-track-appTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "finance-track-appTests";
+			sourceTree = "<group>";
+		};
+		FB8F57D52ED621E400027A3E /* finance-track-appUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "finance-track-appUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FB8F57AB2ED621E100027A3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB8F57C52ED621E400027A3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB8F57CF2ED621E400027A3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FB8F57A52ED621E100027A3E = {
+			isa = PBXGroup;
+			children = (
+				FB8F57B02ED621E200027A3E /* finance-track-app */,
+				FB8F57CB2ED621E400027A3E /* finance-track-appTests */,
+				FB8F57D52ED621E400027A3E /* finance-track-appUITests */,
+				FB8F57AF2ED621E200027A3E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FB8F57AF2ED621E200027A3E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB8F57AE2ED621E200027A3E /* finance-track-app.app */,
+				FB8F57C82ED621E400027A3E /* finance-track-appTests.xctest */,
+				FB8F57D22ED621E400027A3E /* finance-track-appUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FB8F57AD2ED621E100027A3E /* finance-track-app */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB8F57DB2ED621E400027A3E /* Build configuration list for PBXNativeTarget "finance-track-app" */;
+			buildPhases = (
+				FB8F57AA2ED621E100027A3E /* Sources */,
+				FB8F57AB2ED621E100027A3E /* Frameworks */,
+				FB8F57AC2ED621E100027A3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				FB8F57B02ED621E200027A3E /* finance-track-app */,
+			);
+			name = "finance-track-app";
+			packageProductDependencies = (
+			);
+			productName = "finance-track-app";
+			productReference = FB8F57AE2ED621E200027A3E /* finance-track-app.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FB8F57C72ED621E400027A3E /* finance-track-appTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB8F57E02ED621E400027A3E /* Build configuration list for PBXNativeTarget "finance-track-appTests" */;
+			buildPhases = (
+				FB8F57C42ED621E400027A3E /* Sources */,
+				FB8F57C52ED621E400027A3E /* Frameworks */,
+				FB8F57C62ED621E400027A3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB8F57CA2ED621E400027A3E /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				FB8F57CB2ED621E400027A3E /* finance-track-appTests */,
+			);
+			name = "finance-track-appTests";
+			packageProductDependencies = (
+			);
+			productName = "finance-track-appTests";
+			productReference = FB8F57C82ED621E400027A3E /* finance-track-appTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FB8F57D12ED621E400027A3E /* finance-track-appUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB8F57E32ED621E400027A3E /* Build configuration list for PBXNativeTarget "finance-track-appUITests" */;
+			buildPhases = (
+				FB8F57CE2ED621E400027A3E /* Sources */,
+				FB8F57CF2ED621E400027A3E /* Frameworks */,
+				FB8F57D02ED621E400027A3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB8F57D42ED621E400027A3E /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				FB8F57D52ED621E400027A3E /* finance-track-appUITests */,
+			);
+			name = "finance-track-appUITests";
+			packageProductDependencies = (
+			);
+			productName = "finance-track-appUITests";
+			productReference = FB8F57D22ED621E400027A3E /* finance-track-appUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FB8F57A62ED621E100027A3E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1610;
+				LastUpgradeCheck = 1610;
+				TargetAttributes = {
+					FB8F57AD2ED621E100027A3E = {
+						CreatedOnToolsVersion = 16.1;
+					};
+					FB8F57C72ED621E400027A3E = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = FB8F57AD2ED621E100027A3E;
+					};
+					FB8F57D12ED621E400027A3E = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = FB8F57AD2ED621E100027A3E;
+					};
+				};
+			};
+			buildConfigurationList = FB8F57A92ED621E100027A3E /* Build configuration list for PBXProject "finance-track-app" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FB8F57A52ED621E100027A3E;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = FB8F57AF2ED621E200027A3E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FB8F57AD2ED621E100027A3E /* finance-track-app */,
+				FB8F57C72ED621E400027A3E /* finance-track-appTests */,
+				FB8F57D12ED621E400027A3E /* finance-track-appUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FB8F57AC2ED621E100027A3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB8F57C62ED621E400027A3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB8F57D02ED621E400027A3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FB8F57AA2ED621E100027A3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB8F57C42ED621E400027A3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB8F57CE2ED621E400027A3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FB8F57CA2ED621E400027A3E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB8F57AD2ED621E100027A3E /* finance-track-app */;
+			targetProxy = FB8F57C92ED621E400027A3E /* PBXContainerItemProxy */;
+		};
+		FB8F57D42ED621E400027A3E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB8F57AD2ED621E100027A3E /* finance-track-app */;
+			targetProxy = FB8F57D32ED621E400027A3E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FB8F57DC2ED621E400027A3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "finance-track-app/finance_track_app.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4N2SK34P28;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "finance-track-app/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.ntk.finance-track-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FB8F57DD2ED621E400027A3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "finance-track-app/finance_track_app.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4N2SK34P28;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "finance-track-app/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.ntk.finance-track-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FB8F57DE2ED621E400027A3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FB8F57DF2ED621E400027A3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FB8F57E12ED621E400027A3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4N2SK34P28;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.ntk.finance-track-appTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/finance-track-app.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/finance-track-app";
+			};
+			name = Debug;
+		};
+		FB8F57E22ED621E400027A3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4N2SK34P28;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.ntk.finance-track-appTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/finance-track-app.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/finance-track-app";
+			};
+			name = Release;
+		};
+		FB8F57E42ED621E400027A3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4N2SK34P28;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.ntk.finance-track-appUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "finance-track-app";
+			};
+			name = Debug;
+		};
+		FB8F57E52ED621E400027A3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4N2SK34P28;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.ntk.finance-track-appUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "finance-track-app";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FB8F57A92ED621E100027A3E /* Build configuration list for PBXProject "finance-track-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB8F57DE2ED621E400027A3E /* Debug */,
+				FB8F57DF2ED621E400027A3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB8F57DB2ED621E400027A3E /* Build configuration list for PBXNativeTarget "finance-track-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB8F57DC2ED621E400027A3E /* Debug */,
+				FB8F57DD2ED621E400027A3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB8F57E02ED621E400027A3E /* Build configuration list for PBXNativeTarget "finance-track-appTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB8F57E12ED621E400027A3E /* Debug */,
+				FB8F57E22ED621E400027A3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB8F57E32ED621E400027A3E /* Build configuration list for PBXNativeTarget "finance-track-appUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB8F57E42ED621E400027A3E /* Debug */,
+				FB8F57E52ED621E400027A3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FB8F57A62ED621E100027A3E /* Project object */;
+}
