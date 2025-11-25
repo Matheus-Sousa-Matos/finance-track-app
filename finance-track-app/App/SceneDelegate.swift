@@ -10,16 +10,22 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    var appCoordinator: AppCoordinator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-        window = UIWindow(windowScene: windowScene)
+        guard let windowScene = scene as? UIWindowScene else { return }
+
+        // Cria a window
+        let window = UIWindow(windowScene: windowScene)
         
-        let viewController = ViewController()
+        // Cria o container de dependências aqui (top-level)
+        let container = DIContainer()
         
-        window?.rootViewController = viewController
-        window?.makeKeyAndVisible()
+        let coordinator = AppCoordinator(window: window, container: container)
+        self.appCoordinator = coordinator
+        self.window = window
+
+        coordinator.start()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -52,7 +58,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Save changes in the application's managed object context when the application transitions to the background.
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
-
 
 }
 
