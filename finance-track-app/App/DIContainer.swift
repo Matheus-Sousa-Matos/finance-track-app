@@ -5,36 +5,42 @@
 //  Created by Matheus de Sousa Matos on 25/11/25.
 //
 
+import Foundation
+
 // MARK: - DIContainer
 final class DIContainer {
     static let shared = DIContainer()
     
-    // Serviços vazios temporários
-    let authService: AuthServiceProtocol
-
-    //MARK: - Remove before
-    // Serviço de teste de injeção de dependência.
-    let mockDataService: MockDataServiceProtocol
+    let userDefaultsService: UserDefaultsServiceProtocol
+    let appleAuthService: AppleAuthServiceProtocol
+    let mockDataService: MockDataServiceProtocol //TODO: - Remover depois
     
-    init(authService: AuthServiceProtocol = AuthService(),
-         mockDataService: MockDataServiceProtocol = MockDataService()) {
-        self.authService = authService
+    init(userDefaultsService: UserDefaultsServiceProtocol = UserDefaultsService(),
+         appleAuthService: AppleAuthServiceProtocol = MockAppleAuthService(),
+         mockDataService: MockDataServiceProtocol = MockDataService())
+    {
+        self.userDefaultsService = userDefaultsService
+        self.appleAuthService = appleAuthService
         self.mockDataService = mockDataService
     }
     
 }
 
-// MARK: - Serviços base (placeholders)
-protocol AuthServiceProtocol {
-    func placeholder()
+// MARK: - Apple Auth (mock) - Mover para outro arquivo
+protocol AppleAuthServiceProtocol {
+    func signIn(completion: @escaping (Bool) -> Void)
 }
 
-final class AuthService: AuthServiceProtocol {
-    func placeholder() {}
+final class MockAppleAuthService: AppleAuthServiceProtocol {
+    func signIn(completion: @escaping (Bool) -> Void) {
+        // simula autenticação assincrona
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+            completion(true)
+        }
+    }
 }
 
-//REMOVE
-// MARK: - MockDataService Exemplo
+//TODO: - Remover depois
 protocol MockDataServiceProtocol {
     var message: String { get }
 }

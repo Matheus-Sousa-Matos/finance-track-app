@@ -42,7 +42,7 @@ class ButtonBuilder {
     }
     
     func setFont(_ font: UIFont) -> ButtonBuilder {
-        self.font = font 
+        self.font = font
         return self
     }
     
