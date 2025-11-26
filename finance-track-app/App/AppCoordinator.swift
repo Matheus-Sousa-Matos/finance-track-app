@@ -20,14 +20,41 @@ final class AppCoordinator: Coordinator {
     }
 
     func start() {
-                
-        let homeCoordinator = HomeCoordinator(navigationController: navigationController, container: container)
-        homeCoordinator.start()
         
-        //let onboardingCoordinator = OnboardingCoordinator(navigationController: navigationController)
-        //onboardingCoordinator.start()
-
+        switch DevConfig.flowBypass {
+        case .none:
+            if container.userDefaultsService.isFirstLaunch {
+                let onboarding = OnboardingCoordinator(navigationController: navigationController, container: container)
+                onboarding.start()
+            } else {
+                let auth = AuthCoordinator(navigationController: navigationController, container: container)
+                auth.start()
+            }
+        case .forceOnboarding:
+            showOnboarding()
+        case .forceAuth:
+            showAppleAuth()
+        }
+        
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
+    
+    private func showOnboarding() {
+        let onboarding = OnboardingCoordinator(navigationController: navigationController, container: container)
+        onboarding.start()
+    }
+    
+    private func showAppleAuth() {
+        let auth = AuthCoordinator(navigationController: navigationController, container: container)
+        auth.start()
+    }
+    
+    //TODO: - Verificar se sera mantido nesse local... 
+    private func showHome() {
+        let homeCoordinator = HomeCoordinator(navigationController: navigationController, container: container)
+        homeCoordinator.start()
+    }
+    
 }
+

@@ -14,7 +14,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = scene as? UIWindowScene else { return }
-
+        
+        // DevConfig use to development
+        DevConfig.flowBypass = .forceOnboarding
+        
         // Cria a window
         let window = UIWindow(windowScene: windowScene)
         
