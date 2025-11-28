@@ -5,14 +5,50 @@
 //  Created by Matheus de Sousa Matos on 26/11/25.
 //
 
-final class OnboardingViewModel: BaseViewModel {
-    private let userDefaults: UserDefaultsServiceProtocol
+// MARK: - Output do ViewModel
+protocol OnboardingViewModelOutput: AnyObject {
+    func didUpdatePage(_ page: OnboardingPage)
+    func didFinishOnboarding()
+}
 
-    init(userDefaults: UserDefaultsServiceProtocol) {
+final class OnboardingViewModel: BaseViewModel {
+    private let pages: [OnboardingPage]
+    private var currentIndex: Int = 0
+    private let userDefaults: UserDefaultsServiceProtocol
+    weak var output: OnboardingViewModelOutput?
+    
+    var currentPage: OnboardingPage {
+        pages[currentIndex]
+    }
+    
+    var canProceed: Bool {
+        currentIndex < pages.count - 1
+    }
+
+    init(userDefaults: UserDefaultsServiceProtocol,
+         pages: [OnboardingPage])
+    {
         self.userDefaults = userDefaults
+        self.pages = pages
     }
 
     func completeOnboarding() {
         userDefaults.markOnboardingAsSeen()
     }
+    
+    func completeOnboardingFlow() {
+        userDefaults.markOnboardingAsSeen()
+        output?.didFinishOnboarding()
+    }
+    
+    func nextPage() {
+        print("Can Proceed: \(canProceed)")
+        if canProceed {
+            currentIndex += 1
+            output?.didUpdatePage(currentPage)
+        } else {
+            completeOnboardingFlow()
+        }
+    }
+    
 }

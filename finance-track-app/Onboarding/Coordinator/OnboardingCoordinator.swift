@@ -9,8 +9,31 @@ import UIKit
 
 // MARK: - OnboardingCoordinator
 final class OnboardingCoordinator: Coordinator {
-    let navigationController: UINavigationController
-    let container: DIContainer
+    internal let navigationController: UINavigationController
+    private let container: DIContainer
+
+    var onFinish: (() -> Void)?
+
+    private let pages = [
+        OnboardingPage(
+            title: "Primeira Tela Onboarding",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            backgroundImageName: "placeholderOnboarding",
+            buttonTitle: "next"
+        ),
+        OnboardingPage(
+            title: "Segunda Tela Onboarding",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            backgroundImageName: "placeholderOnboarding",
+            buttonTitle: "next"
+        ),
+        OnboardingPage(
+            title: "Última tela Onboarding",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            backgroundImageName: "placeholderOnboarding",
+            buttonTitle: "finish"
+        )
+    ]
 
     init(navigationController: UINavigationController, container: DIContainer) {
         self.navigationController = navigationController
@@ -18,14 +41,15 @@ final class OnboardingCoordinator: Coordinator {
     }
 
     func start() {
-        let viewModel = OnboardingViewModel(userDefaults: container.userDefaultsService)
+        let viewModel = OnboardingViewModel(
+            userDefaults: container.userDefaultsService,
+            pages: pages
+        )
+
         let vc = OnboardingViewController(viewModel: viewModel) { [weak self] in
-            // ao completar onboarding, passamos para AuthCoordinator (não pop, trocamos root do nav)
-            guard let self = self else { return }
-            let auth = AuthCoordinator(navigationController: self.navigationController, container: self.container)
-            auth.start()
+            self?.onFinish?()
         }
+
         navigationController.setViewControllers([vc], animated: false)
     }
-    
 }
