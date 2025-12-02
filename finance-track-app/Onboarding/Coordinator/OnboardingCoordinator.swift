@@ -9,8 +9,31 @@ import UIKit
 
 // MARK: - OnboardingCoordinator
 final class OnboardingCoordinator: Coordinator {
-    let navigationController: UINavigationController
-    let container: DIContainer
+    internal let navigationController: UINavigationController
+    private let container: DIContainer
+
+    var onFinish: (() -> Void)?
+
+    private let pages = [
+        OnboardingPage(
+            title: "Understand your expenses",
+            description: "See where every penny goes and gain clarity about your finances.",
+            backgroundImageName: "Wallet",
+            buttonTitle: "next"
+        ),
+        OnboardingPage(
+            title: "Set your goals",
+            description: "Create financial goals and track your progress in a simple and motivating way.",
+            backgroundImageName: "PiggyBank",
+            buttonTitle: "next"
+        ),
+        OnboardingPage(
+            title: "Take control",
+            description: "With intelligent reports and personalized insights, you make better decisions every day.",
+            backgroundImageName: "Budget",
+            buttonTitle: "finish"
+        )
+    ]
 
     init(navigationController: UINavigationController, container: DIContainer) {
         self.navigationController = navigationController
@@ -18,14 +41,15 @@ final class OnboardingCoordinator: Coordinator {
     }
 
     func start() {
-        let viewModel = OnboardingViewModel(userDefaults: container.userDefaultsService)
+        let viewModel = OnboardingViewModel(
+            userDefaults: container.userDefaultsService,
+            pages: pages
+        )
+
         let vc = OnboardingViewController(viewModel: viewModel) { [weak self] in
-            // ao completar onboarding, passamos para AuthCoordinator (não pop, trocamos root do nav)
-            guard let self = self else { return }
-            let auth = AuthCoordinator(navigationController: self.navigationController, container: self.container)
-            auth.start()
+            self?.onFinish?()
         }
+
         navigationController.setViewControllers([vc], animated: false)
     }
-    
 }

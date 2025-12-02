@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class AuthViewController: BaseViewController {
+final class AuthViewController: UIViewController {
     private let viewModel: AuthViewModel
     private let onComplete: (Bool) -> Void
 
@@ -21,7 +21,7 @@ final class AuthViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupTitle(title: "Autenticação")
+        title = "Autenticação"
         setupUI()
     }
 

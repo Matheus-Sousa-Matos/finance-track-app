@@ -6,7 +6,7 @@
 //
 
 // MARK: - HomeViewModel
-final class HomeViewModel: BaseViewModel {
+final class HomeViewModel {
     private let mockService: MockDataServiceProtocol
 
     init(mockService: MockDataServiceProtocol) {

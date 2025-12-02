@@ -6,7 +6,7 @@
 //
 
 
-final class AuthViewModel: BaseViewModel {
+final class AuthViewModel {
     private let appleAuthService: AppleAuthServiceProtocol
 
     init(appleAuthService: AppleAuthServiceProtocol) {
