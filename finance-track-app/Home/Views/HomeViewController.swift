@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class HomeViewController: BaseViewController {
+final class HomeViewController: UIViewController {
     let viewModel: HomeViewModel
     
     init(viewModel: HomeViewModel) {
@@ -20,20 +20,7 @@ final class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        self.setupTitle(title: "Home")
-        
-        print("[Home] mensagem: \(viewModel.exposedMessage)")
-        
-        let buttonNext = ButtonBuilder()
-            .setTitle("Continuar")
-            .setTitleColor(.white)
-            .setBackgroundColor(.systemGreen)
-            .setAction(target: self, action: #selector(buttonTapped))
-            .build()
-        
-        /// O frame deve ser feito fora do builder, visto que o build cuida apenas de estilo e comportamento.
-        buttonNext.frame = CGRect(x: 100, y: 200, width: 200, height: 50)
-        view.addSubview(buttonNext)
+        title = "Home"
     }
     
     @objc func buttonTapped(){

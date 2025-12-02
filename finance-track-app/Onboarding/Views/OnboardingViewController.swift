@@ -8,7 +8,7 @@
 import UIKit
 
 // MARK: - Placeholder ViewController
-final class OnboardingViewController: BaseViewController {
+final class OnboardingViewController: UIViewController {
     private let viewModel: OnboardingViewModel
     private let onboardingView: OnboardingView = OnboardingView()
     private let completion: () -> Void
@@ -25,9 +25,8 @@ final class OnboardingViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupTitle(title: "Onboarding")
         bindData(viewModel.currentPage)
-        onboardingView.proceedButton.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
+        onboardingView.nextButton.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
     }
     
     override func loadView() {
@@ -35,7 +34,7 @@ final class OnboardingViewController: BaseViewController {
     }
     
     private func bindData(_ page: OnboardingPage) {
-        onboardingView.configure(with: page)
+        onboardingView.configure(with: page, currentIndex: viewModel.currentIndex, totalPages: viewModel.pages.count)
     }
 
     @objc private func nextTapped() {

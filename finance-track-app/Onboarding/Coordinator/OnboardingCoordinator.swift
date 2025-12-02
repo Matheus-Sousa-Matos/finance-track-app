@@ -16,21 +16,21 @@ final class OnboardingCoordinator: Coordinator {
 
     private let pages = [
         OnboardingPage(
-            title: "Primeira Tela Onboarding",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            backgroundImageName: "placeholderOnboarding",
+            title: "Understand your expenses",
+            description: "See where every penny goes and gain clarity about your finances.",
+            backgroundImageName: "Wallet",
             buttonTitle: "next"
         ),
         OnboardingPage(
-            title: "Segunda Tela Onboarding",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            backgroundImageName: "placeholderOnboarding",
+            title: "Set your goals",
+            description: "Create financial goals and track your progress in a simple and motivating way.",
+            backgroundImageName: "PiggyBank",
             buttonTitle: "next"
         ),
         OnboardingPage(
-            title: "Última tela Onboarding",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            backgroundImageName: "placeholderOnboarding",
+            title: "Take control",
+            description: "With intelligent reports and personalized insights, you make better decisions every day.",
+            backgroundImageName: "Budget",
             buttonTitle: "finish"
         )
     ]

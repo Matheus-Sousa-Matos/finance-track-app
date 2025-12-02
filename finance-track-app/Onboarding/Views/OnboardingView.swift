@@ -7,72 +7,115 @@
 
 import UIKit
 
-class OnboardingView: UIView {
-    let titleLabel = UILabel()
-    let descriptionLabel = UILabel()
-    let backgroundImageView = UIImageView()
-    let proceedButton = UIButton(type: .system)
+class OnboardingView: UIView, ConfigurableView {
+    private let progressStackView = UIStackView()
+    private let titleLabel = UILabel()
+    private let descriptionLabel = UILabel()
+    private let illustrationImageView = UIImageView()
+    let nextButton = DS.Components.primaryButton(title: "NEXT")
+    
+    private enum Constants {
+        static let totalInitialDots: Int = 3
+        static let sizeImage: CGFloat = 200
+        static let sizeDot: CGFloat = 10
+        static let spacing: CGFloat = 200
+    }
+
+    private var progressDots: [UIView] = []
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setup()
+        self.setupView()
+        self.setupProgressDots(count: Constants.totalInitialDots)
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
-    private func setup() {
-        self.addSubViews()
+    func addSubViews() {
+        addSubview(illustrationImageView)
+        addSubview(progressStackView)
+        addSubview(titleLabel)
+        addSubview(descriptionLabel)
+        addSubview(nextButton)
+    }
+    
+    internal func configureStyles() {
+        self.backgroundColor = DS.Colors.background
         
-        //Configuration elements
+        illustrationImageView.contentMode = .scaleAspectFit
+
+        progressStackView.axis = .horizontal
+        progressStackView.distribution = .equalSpacing
+        progressStackView.alignment = .center
+        progressStackView.spacing = DS.Spacing.small
+        
         titleLabel.textAlignment = .center
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 24)
+        titleLabel.font = DS.Typography.xlarge
         
         descriptionLabel.textAlignment = .center
-        descriptionLabel.numberOfLines = 3
-        descriptionLabel.font = UIFont.systemFont(ofSize: 16)
+        descriptionLabel.numberOfLines = 0
+        descriptionLabel.font = DS.Typography.medium
+    }
+    
+    internal func configureLayout() {
+        [illustrationImageView, titleLabel, descriptionLabel, progressStackView, nextButton].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+        }
         
-        proceedButton.setTitle("Continuar", for: .normal)
-        
-        backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        proceedButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        
-        //Constraints
         NSLayoutConstraint.activate([
+            illustrationImageView.topAnchor.constraint(equalTo: topAnchor, constant: Constants.spacing),
+            illustrationImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            illustrationImageView.heightAnchor.constraint(equalToConstant: Constants.sizeImage),
+            illustrationImageView.widthAnchor.constraint(equalToConstant: Constants.sizeImage),
             
-            backgroundImageView.topAnchor.constraint(equalTo: topAnchor),
-            backgroundImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            backgroundImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            backgroundImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            progressStackView.topAnchor.constraint(equalTo: illustrationImageView.bottomAnchor, constant: DS.Spacing.xlarge),
+            progressStackView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            progressStackView.heightAnchor.constraint(equalToConstant: Constants.sizeDot),
 
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -60),
+            titleLabel.centerYAnchor.constraint(equalTo: progressStackView.bottomAnchor, constant: DS.Spacing.xlarge),
             
-            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
-            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
-            descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
+            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: DS.Spacing.medium),
+            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: DS.Spacing.large),
+            descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -DS.Spacing.large),
              
-            proceedButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 24),
-            proceedButton.centerXAnchor.constraint(equalTo: centerXAnchor)
-            
+            nextButton.topAnchor.constraint(equalTo: bottomAnchor, constant: -Constants.spacing),
+            nextButton.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
     }
     
-    private func addSubViews() {
-        addSubview(backgroundImageView)
-        addSubview(titleLabel)
-        addSubview(descriptionLabel)
-        addSubview(proceedButton)
-    }
-    
-    func configure(with page: OnboardingPage) {
+    func configure(
+        with page: OnboardingPage,
+        currentIndex: Int,
+        totalPages: Int
+    ) {
         titleLabel.text = page.title
         descriptionLabel.text = page.description
-        backgroundImageView.image = UIImage(named: page.backgroundImageName)
-        proceedButton.setTitle(page.buttonTitle, for: .normal)
+        illustrationImageView.image = UIImage(named: page.backgroundImageName)
+        nextButton.setTitle(page.buttonTitle.uppercased(), for: .normal)
+        
+        setupProgressDots(count: totalPages)
+        updateProgressDots(currentIndex: currentIndex)
     }
+    
+    // MARK: - DOTs Progress
+    private func setupProgressDots(count: Int) {
+        progressDots.forEach { $0.removeFromSuperview() }
+        progressDots = []
+
+        for i in 0..<count {
+            let dot = DS.Components.progressDot(isActive: i == 0)
+            progressStackView.addArrangedSubview(dot)
+            progressDots.append(dot)
+        }
+    }
+    
+    private func updateProgressDots(currentIndex: Int) {
+        for (index, dot) in progressDots.enumerated() {
+            dot.backgroundColor = index == currentIndex ? DS.Colors.primary : DS.Colors.tertiary
+        }
+    }
+    
 }

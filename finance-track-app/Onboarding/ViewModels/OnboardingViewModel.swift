@@ -11,9 +11,9 @@ protocol OnboardingViewModelOutput: AnyObject {
     func didFinishOnboarding()
 }
 
-final class OnboardingViewModel: BaseViewModel {
-    private let pages: [OnboardingPage]
-    private var currentIndex: Int = 0
+final class OnboardingViewModel {
+    let pages: [OnboardingPage]
+    var currentIndex: Int = 0
     private let userDefaults: UserDefaultsServiceProtocol
     weak var output: OnboardingViewModelOutput?
     
@@ -42,7 +42,6 @@ final class OnboardingViewModel: BaseViewModel {
     }
     
     func nextPage() {
-        print("Can Proceed: \(canProceed)")
         if canProceed {
             currentIndex += 1
             output?.didUpdatePage(currentPage)
