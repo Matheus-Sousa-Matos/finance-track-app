@@ -119,3 +119,33 @@ class OnboardingView: UIView, ConfigurableView {
     }
     
 }
+
+extension OnboardingView {
+    func setupAccessibility(currentIndex: Int, totalPages: Int) {
+        illustrationImageView.applyAccessibility(
+            label: "Ilustração da tela de onboarding",
+            traits: .image
+        )
+        
+        titleLabel.applyAccessibility(
+            label: titleLabel.text,
+            traits: .header
+        )
+        
+        descriptionLabel.applyAccessibility(
+            label: descriptionLabel.text,
+            traits: .staticText
+        )
+        
+        nextButton.applyAccessibility(
+            label: nextButton.title(for: .normal),
+            hint: "Avança para a próxima etapa do onboarding",
+            traits: .button
+        )
+        
+        progressStackView.isAccessibilityElement = true
+        progressStackView.accessibilityLabel = "Progresso"
+        progressStackView.accessibilityValue = "Página \(currentIndex+1) de \(totalPages)"
+    }
+}
+

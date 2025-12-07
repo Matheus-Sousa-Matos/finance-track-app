@@ -35,6 +35,7 @@ final class OnboardingViewController: UIViewController {
     
     private func bindData(_ page: OnboardingPage) {
         onboardingView.configure(with: page, currentIndex: viewModel.currentIndex, totalPages: viewModel.pages.count)
+        onboardingView.setupAccessibility(currentIndex: viewModel.currentIndex, totalPages: viewModel.pages.count)
     }
 
     @objc private func nextTapped() {
